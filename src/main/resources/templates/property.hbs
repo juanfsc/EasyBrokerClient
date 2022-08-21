@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    {{>head.hbs}}
+    <body>
+
+
+        <div class="card">
+            <div class="card-content">
+                <h2 id="public_id">{{property.publicID}}</h2>
+                <p><b>Titulo:</b> {{property.title}}</p>
+                <p><b>Descripcion:</b> {{property.description}}</p>
+                <p><b>Tipo:</b> {{property.type}}</p>
+                <p><b>Locacion:</b> {{property.location}}</p>
+            </div>
+           <div class="carousel" width="100">
+               {{#each property.images}}
+                   <img class="carousel-item" src="{{image}}" alt="{{title}}">
+               {{/each}}
+           </div>
+        </div>
+        <h2>Contact Form</h2>
+        <form id="contactForm" class="col s12" >
+           <div class="row">
+                   <div class="input-field col s6">
+                       <i class="material-icons prefix">account_circle</i>
+                       <input name="name" id="name" type="text" class="validate">
+                       <label for="name">Name</label>
+                   </div>
+                   <div class="input-field col s6">
+                       <i class="material-icons prefix">phone</i>
+                       <input name="phone" id="phone" type="tel" class="validate">
+                       <label for="phone">Phone</label>
+                   </div>
+           </div>
+           <div class="row">
+               <div class="input-field col s6">
+                   <i class="material-icons prefix">email</i>
+                   <input name="email" id="email" type="email" class="validate">
+                   <label for="email">Email</label>
+               </div>
+               <div class="input-field col s6">
+                   <i class="material-icons prefix">short_text</i>
+                   <textarea name="message" id="message" class="materialize-textarea"></textarea>
+                   <label for="message">Message</label>
+               </div>
+           </div>
+           <input type="submit" value="Send" class="submit-btn" />
+       </form>
+
+
+        <!--JavaScript at end of body for optimized loading-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="/js/main.js"></script>
+    </body>
+</html>
